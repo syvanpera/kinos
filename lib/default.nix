@@ -1,9 +1,10 @@
 { pkgs, eachDefaultSystem }:
 
 {
-  mkEnv = { toolchains ? [], packages ? [], shellHook ? "" }:
+  mkEnv = { name ? "", toolchains ? [], packages ? [], shellHook ? "" }:
     eachDefaultSystem (system: {
       devShells.default = pkgs.mkShell {
+        name = name;
         packages = toolchains ++ packages;
         inherit shellHook;
       };
