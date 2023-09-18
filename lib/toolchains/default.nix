@@ -2,5 +2,5 @@
 
 {
   terraform = with pkgs; [ terraform ];
-  azure = with pkgs; [ azure ];
+  azure = with pkgs; [ azure-cli ];
 }
